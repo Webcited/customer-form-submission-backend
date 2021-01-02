@@ -14,7 +14,7 @@ const mailOptions = {
 };
 const transporter = nodemailer.createTransport(mailOptions);
 
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.post("/submit", (req, res) => {
   transporter.sendMail({
